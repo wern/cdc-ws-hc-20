@@ -1,0 +1,8 @@
+git clone https://github.com/wern/cdc-ws-hc-20
+
+curl  -X PUT \
+        -H "X-Pact-Mock-Service: true" \
+        -H "Content-Type: application/json" -d@./HelloWorldConsumer-HelloWorldProvider.json \
+        http://localhost:8080/interactions
+
+mvn pact:publish
